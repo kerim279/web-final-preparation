@@ -23,7 +23,6 @@ Flight::route('GET /employees/performance', function () {
      * This endpoint should return output in JSON format
      * 10 points
      */
-
     Flight::json(Flight::examService()->employees_performance_report());
 });
 
@@ -34,8 +33,8 @@ Flight::route('DELETE /employee/delete/@employee_id', function ($employee_id) {
      * `message` property that indicates that process went successfully.
      * 5 points
      */
-    Flight::json(Flight::examService()->delete_employee($employee_id));
-    Flight::json(['message' => "Employee deleted successfully."]);
+    Flight::examService()->delete_employee($employee_id);
+    Flight::json(['message' => 'Employee deleted successfully.']);
 });
 
 Flight::route('PUT /employee/edit/@employee_id', function ($employee_id) {
@@ -49,7 +48,6 @@ Flight::route('PUT /employee/edit/@employee_id', function ($employee_id) {
      * This endpoint should return the edited customer in JSON format
      * 10 points
      */
-    $data = Flight::request()->data->getData();
     Flight::json(Flight::examService()->edit_employee($employee_id, $data));
 });
 

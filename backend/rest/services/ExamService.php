@@ -40,6 +40,6 @@ class ExamService {
     * Implement service method used to get all products in a single order
     */
     public function get_order_details($order_id){
-        return$this->dao->get_order_details($order_id);
+        return $this->dao->get_order_details($order_id);
     }
 }
